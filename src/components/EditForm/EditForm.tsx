@@ -29,7 +29,7 @@ export const EditForm = ({note}: EditNoteType) => {
       hasError = true
     }
 
-    if (!title) {
+    if (!title.trim()) {
       setError(prevError => ({...prevError, title: "O título é obrigatório"}))
       hasError = true
     }

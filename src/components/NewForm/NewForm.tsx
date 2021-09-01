@@ -35,7 +35,7 @@ export const NewForm = () => {
       hasError = true
     }
 
-    if (!title) {
+    if (!title.trim()) {
       setError(prevError => ({...prevError, title: "O título é obrigatório"}))
       hasError = true
     }
