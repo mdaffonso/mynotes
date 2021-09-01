@@ -24,6 +24,7 @@ export const EditForm = ({note}: EditNoteType) => {
   const editNoteHandler = async (e: FormEvent<HTMLFormElement>) => {
     let hasError = false
     e.preventDefault()
+    setError(emptyError)
     if (image && (await imageChecker === "error" || await imageChecker === "timeout")) {
       setError(prevError => ({...prevError, image: "O valor informado deve ser uma URL contendo uma imagem"}))
       hasError = true
@@ -47,7 +48,6 @@ export const EditForm = ({note}: EditNoteType) => {
 
     context.updateList(editedNote, "edit")
     context.toggleModal()
-    setError(emptyError)
     hasError = false
     toast.success("Nota editada com sucesso!")
   }
