@@ -4,6 +4,7 @@
   --main: rgb(235, 235, 235);
   --secondary: rgb(175, 80, 252);
   --accent: rgb(233, 0, 140);
+  --error-text: rgb(252, 211, 255);
 }
 
 *, *::before, *::after {

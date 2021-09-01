@@ -15,7 +15,7 @@
 .InputGroup div {
   font-size: 0.8rem;
   padding: 0.5rem;
-  color: #680026;
+  color: var(--error-text);
 }
 
 .InputGroup input,

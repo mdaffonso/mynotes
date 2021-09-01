@@ -12,6 +12,6 @@ export const Nav = () => {
   }
 
   return (
-    <button onClick={newItem} data-open={context.modalOpen} className={styles.NavButton}></button>
+    <button onClick={newItem} data-open={context.modalOpen} className={styles.NavButton} data-transition={context.modalTransition}></button>
   )
 }

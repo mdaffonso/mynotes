@@ -1,5 +1,4 @@
-import { FormEvent, useContext } from "react"
-import { useState } from "react"
+import { FormEvent, useContext, useEffect, useState, useRef } from "react"
 import toast from "react-hot-toast"
 import { MainContext } from "../../contexts/MainContext"
 import { useImageCheck } from "../../hooks/useImageCheck"
@@ -14,6 +13,7 @@ export const EditForm = ({note}: EditNoteType) => {
     image: ""
   }
 
+  const firstRef = useRef<HTMLInputElement | null>(null)
   const [error, setError] = useState(emptyError)
   const [title, setTitle] = useState(note.title)
   const [image, setImage] = useState(note.image || "")
@@ -52,18 +52,25 @@ export const EditForm = ({note}: EditNoteType) => {
     toast.success("Nota editada com sucesso!")
   }
 
+  
+  useEffect(() => {
+    if(context.modalOpen) {
+      firstRef.current?.focus()
+    }
+  }, [context])
+
   return (
     <form className={styles.EditForm} onSubmit={editNoteHandler}>
       <h1>Editar Nota</h1>
       <div className={styles.InputGroup}>
         <label htmlFor="title">Título</label>
-        <input type="text" name="title" id="title" value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input ref={firstRef} type="text" name="title" id="title" value={title} onChange={(e) => setTitle(e.target.value)} maxLength={255} />
         { error.title && <div>{error.title}</div> }
       </div>
 
       <div className={styles.InputGroup}>
         <label htmlFor="image">URL de Imagem</label>
-        <input type="text" name="image" id="image" value={image} onChange={(e) => setImage(e.target.value)} />
+        <input type="text" name="image" id="image" value={image} onChange={(e) => setImage(e.target.value)} maxLength={500} />
         { error.image && <div>{error.image}</div> }
       </div>
 
