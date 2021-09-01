@@ -1,0 +1,11 @@
+.Header {
+  padding: 2rem 1rem 1rem;
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+}
+
+.Header > img {
+  max-width: min(50%, 10rem);
+  height: auto;
+  object-fit: contain;
+}

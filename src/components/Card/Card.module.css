@@ -1,0 +1,74 @@
+.Card {
+  display: inline-block;
+  border-radius: 0.25rem;
+  background: white;
+  box-shadow: 0.5rem 0.5rem 1rem -0.25rem rgba(0, 0, 0, 0.13);
+  width: calc(100% - 0.5rem);
+  max-width: 40ch;
+  margin: 0.25rem;
+  border: 1px solid rgb(209, 209, 209);
+  overflow: hidden;
+  max-height: var(--height);
+  transition: max-height 300ms linear;
+  break-inside: avoid;
+}
+
+.Card[data-remove="true"] {
+  animation: fade-out 200ms linear forwards;
+}
+
+.ContentGroup img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.Card h2,
+.ContentGroup p {
+  max-width: 100%;
+  padding: 0.75rem;
+  margin: 0;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.Card h2 {
+  cursor: pointer;
+}
+
+.ButtonGroup {
+  padding: 0.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  background: var(--secondary);
+}
+
+.ButtonGroup button {
+  --button-size: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: var(--button-size);
+  height: var(--button-size);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  background: white;
+}
+
+.ButtonGroup img {
+  max-width: 1rem;
+  height: auto;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

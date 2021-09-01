@@ -1,0 +1,43 @@
+.EmptyList {
+  opacity: 0.7;
+  padding: 1rem;
+  font-style: italic;
+  max-width: 30ch;
+  break-inside: avoid;
+  display: inline-block;
+}
+
+.List {
+  column-count: 1;
+  column-gap: 0.5rem;
+}
+
+@media (min-width: 500px) {
+  .List {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 900px) {
+  .List {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1200px) {
+  .List {
+    column-count: 4;
+  }
+}
+
+@media (min-width: 1800px) {
+  .List {
+    column-count: 5;
+  }
+}
+
+@media (min-width: 2200px) {
+  .List {
+    column-count: 6;
+  }
+}
