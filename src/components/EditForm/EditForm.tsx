@@ -21,12 +21,6 @@ export const EditForm = ({note}: EditNoteType) => {
   const context = useContext(MainContext)
   const imageChecker = useImageCheck(image, 3000)
 
-  const resetForm = () => {
-    setTitle("")
-    setImage("")
-    setContent("")
-  }
-
   const editNoteHandler = async (e: FormEvent<HTMLFormElement>) => {
     let hasError = false
     e.preventDefault()
@@ -53,7 +47,6 @@ export const EditForm = ({note}: EditNoteType) => {
 
     context.updateList(editedNote, "edit")
     context.toggleModal()
-    resetForm()
     setError(emptyError)
     hasError = false
     toast.success("Nota editada com sucesso!")
