@@ -1,7 +1,7 @@
 .Header {
   padding: 2rem 1rem 1rem;
   display: grid;
-  grid-template-columns: 20rem 1fr;
+  grid-template-columns: 18.5rem 1fr;
 }
 
 .Header > img {
